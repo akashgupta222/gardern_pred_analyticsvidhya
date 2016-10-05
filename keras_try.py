@@ -1,3 +1,6 @@
+train_file='Train_xyqdbho.csv'
+test_file='Test_pyI9Owa.csv'
+
 import pandas as pd
 import numpy as np
 import datetime
@@ -65,7 +68,7 @@ def larger_model():
 	return model
 
 #load training dataset
-train,outcome=preprocess('Train_xyqdbho.csv',True)
+train,outcome=preprocess(train_file,True)
 parkids=train.Park_ID
 tardates=train.Date
 ids_train=train.ID
@@ -73,7 +76,6 @@ ids_train=train.ID
 #dimentionality reduction on pressure features
 pca2=PCA(1)
 train['pressure']=pca2.fit_transform(train[pressure_fea])
-train.to_csv('train1.csv',index=False)
 
 train.drop(drop_fea,axis=1,inplace=True)
 
@@ -89,7 +91,7 @@ clf=pipeline
 clf.fit(train,outcome)
 
 #load test datast
-test,faaltu=preprocess('Test_pyI9Owa.csv',False)
+test,faaltu=preprocess(test_file,False)
 ids=test.ID
 parkids_test=test.Park_ID
 test['pressure']=pca2.transform(test[pressure_fea])

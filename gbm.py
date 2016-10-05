@@ -1,3 +1,6 @@
+train_file='Train_xyqdbho.csv'
+test_file='Test_pyI9Owa.csv'
+
 import pandas as pd
 import numpy as np
 import datetime
@@ -49,7 +52,7 @@ def preprocess(file,istrian):
 	return df,outcome
 
 #load training dataset
-train,outcome=preprocess('Train_xyqdbho.csv',True)
+train,outcome=preprocess(train_file,True)
 parkids=train.Park_ID
 tardates=train.Date
 ids_train=train.ID
@@ -64,7 +67,7 @@ clf=GradientBoostingRegressor(max_depth=5,random_state=7,loss='huber',min_sample
 	learning_rate=0.05,n_estimators=500)
 
 #load test datast
-test,faaltu=preprocess('Test_pyI9Owa.csv',False)
+test,faaltu=preprocess(test_file,False)
 ids=test.ID
 parkids_test=test.Park_ID
 test['pressure']=pca2.transform(test[pressure_fea])

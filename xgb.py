@@ -1,3 +1,6 @@
+train_file='Train_xyqdbho.csv'
+test_file='Test_pyI9Owa.csv'
+
 import pandas as pd
 import numpy as np
 import datetime
@@ -48,7 +51,7 @@ def preprocess(file,istrian):
 	return df,outcome
 
 #load training set
-train,outcome=preprocess('Train_xyqdbho.csv',True)
+train,outcome=preprocess(train_file,True)
 parkids=train.Park_ID
 tardates=train.Date
 train.drop(drop_fea,axis=1,inplace=True)
@@ -61,7 +64,7 @@ num_round = 1100
 param['silent']=1
 print 'classification start'
 
-test,faaltu=preprocess('Test_pyI9Owa.csv',False)
+test,faaltu=preprocess(test_file,False)
 ids=test.ID
 parkids_test=test.Park_ID
 test.drop(drop_fea,axis=1,inplace=True)
