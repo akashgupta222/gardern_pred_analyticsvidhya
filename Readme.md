@@ -8,6 +8,9 @@
 
 ## Dependencies for packages 
 1. scipy 0.18.0 https://www.scipy.org/ <br> sudo pip install scipy
+2. Theano 0.8.2 http://deeplearning.net/software/theano/install.html#install <br> sudo pip install Theano
+3. pyyaml 3.11 https://pypi.python.org/pypi/PyYAML/3.12 <br> sudo pip install pyyaml
+4. gcc 4.8.4 <br> sudo apt-get install build-essential
 
 ## Procedure to generate final output file:
 1. Keep all the training and testing files and the scripts in one folder and set the working directory to that folder. 
